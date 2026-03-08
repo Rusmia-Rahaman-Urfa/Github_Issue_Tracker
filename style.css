@@ -49,3 +49,12 @@ body {
     background: #cbd5e1;
     border-radius: 10px;
 }
+
+#login-page h2{
+   text-align: left;
+   color: black;
+}
+#login-page h3{
+    text-align: left;
+    color: #4f46e5;
+}
