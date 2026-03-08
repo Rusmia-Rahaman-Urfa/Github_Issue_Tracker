@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Issue Tracker</title>
+    <title>GitHub Issues Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body class="bg-slate-50 min-h-screen">
+
+    <section id="login-page" class="flex items-center justify-center min-h-screen">
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-100 w-full max-w-md text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo" class="w-16 mx-auto mb-4">
+            <h1 class="text-2xl font-bold text-slate-800">GitHub Issues Tracker</h1>
+            <p class="text-slate-400 text-sm mb-6">Sign in to manage your issues</p>
+            
+            <div class="space-y-4">
+                <input type="text" id="username" placeholder="Username" class="input input-bordered w-full" />
+                <input type="password" id="password" placeholder="Password" class="input input-bordered w-full" />
+                <button onclick="handleLogin()" class="btn btn-primary w-full bg-indigo-600 border-none hover:bg-indigo-700">Sign In</button>
+            </div>
+
+            <div class="mt-8 p-4 bg-slate-50 rounded-lg text-xs text-left">
+                <p class="text-slate-500 mb-1 italic text-center">Demo Credentials:</p>
+                <p><strong>Username:</strong> admin</p>
+                <p><strong>Password:</strong> admin123</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
