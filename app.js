@@ -43,33 +43,37 @@ function displayIssues(issues) {
     }
 
     issues.forEach(issue => {
-        const priorityColor = issue.priority.toLowerCase() === 'high' ? 'border-t-red-500' : 
-                             (issue.priority.toLowerCase() === 'medium' ? 'border-t-orange-400' : 'border-t-purple-500');
-        
-        const statusImg = issue.status === 'closed' ? 'assets/Closed-Status.png' : 'assets/Open-Status.png';
+        const isClosed = issue.status.toLowerCase() === 'closed';
+        const statusImg = isClosed ? 'assets/Closed-Status.png' : 'assets/Open-Status.png';
+        const statusBorder = isClosed ? 'border-t-indigo-500' : 'border-t-emerald-500';
 
         const card = document.createElement('div');
-        card.className = `bg-white p-6 rounded-xl border-t-4 ${priorityColor} border-x border-b border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer`;
-        
+        card.className = `bg-white p-6 rounded-xl border-t-4 ${statusBorder} border-x border-b border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between`;
         card.onclick = () => showModal(issue._id || issue.id);
 
         card.innerHTML = `
-            <div class="flex justify-between items-start mb-4">
-                <div class="p-1 bg-slate-50 rounded-lg">
-                    <img src="assets/Aperture.png" alt="Aperture" class="w-6 h-6 object-contain">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-1.5 bg-slate-50 rounded-lg">
+                        <img src="assets/Aperture.png" alt="Aperture" class="w-5 h-5 object-contain">
+                    </div>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase ${getPriorityClass(issue.priority)}">
+                        ${issue.priority}
+                    </span>
                 </div>
-                <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase ${getPriorityClass(issue.priority)}">${issue.priority}</span>
-            </div>
 
-            <h3 class="font-bold text-slate-800 text-sm mb-2 line-clamp-1">${issue.title}</h3>
-            <p class="text-xs text-slate-500 mb-4 line-clamp-2">${issue.description}</p>
-            
-            <div class="flex flex-wrap gap-2 mb-6">
-                <span class="badge badge-outline text-[10px] uppercase font-bold text-orange-400 border-orange-200">${issue.label || 'Issue'}</span>
+                <h3 class="font-bold text-slate-800 text-sm mb-2 line-clamp-1">${issue.title}</h3>
+                <p class="text-xs text-slate-500 mb-4 line-clamp-2">${issue.description}</p>
                 
-                <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
-                    <img src="${statusImg}" alt="status" class="w-4 h-4">
-                    <span class="text-[10px] font-bold text-slate-600 uppercase">${issue.status || 'open'}</span>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="badge badge-outline text-[10px] uppercase font-bold text-slate-400 border-slate-200">
+                        ${issue.label || 'Issue'}
+                    </span>
+                    
+                    <div class="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1 rounded-full border border-slate-100">
+                        <img src="${statusImg}" alt="status" class="w-3 h-3">
+                        <span class="text-[9px] font-black text-slate-600 uppercase">${issue.status}</span>
+                    </div>
                 </div>
             </div>
 
