@@ -1,19 +1,61 @@
-# 1. Difference between var, let, and const?
-var is the old way; it can be updated and re-declared anywhere in the function, which often leads to bugs. let is the modern choice for variables that need to change (like a counter), as it is block-scoped. const is for things that stay the same (like an API URL).
+# 🛠️ GitHub Issue Tracker
 
-# 2. What is the spread operator (...)?
-It's a shortcut to "unpack" an array or object. Instead of looping, you can use ... to copy elements from one array into a new one or combine two objects easily.
+A specialized project management dashboard designed for developers to track, categorize, and resolve software bugs and feature requests efficiently.
 
-# 3. Difference between map(), filter(), and forEach()?
+---
 
-***forEach*** is just for looping—it doesn't return anything.
+### 🚀 Project Overview
+The **GitHub Issue Tracker** is a productivity tool built to manage software development lifecycles. It provides a centralized hub for teams to visualize their progress and prioritize tasks without the clutter of traditional project management software.
 
-***map*** transforms every item and returns a new array of the same length.
+* **Agile Workflow**: Optimized for quick issue entry and rapid status updates.
+* **Developer-First UI**: Clean, high-contrast interface designed for long-duration coding sessions.
+* **Persistent Tracking**: Ensures data integrity across sessions using advanced state management.
 
-***filter*** checks every item against a condition and returns a shorter array containing only the items that passed.
+---
 
-# 4. What is an arrow function?
-It's a shorter way to write functions using =>. It doesn't just save typing; it also handles the this keyword differently, making it very popular in modern JS development.
+### 🛠️ Technology Stack
+* **Language**: Vanilla JavaScript (ES6+)
+* **Markup**: HTML5
+* **Styling**: Tailwind CSS (Custom variables & Responsive design)
+* **Icons**: Custom Assets (Aperture, Status-icons)
+* **Storage**: Browser LocalStorage API
+* **Deployment**: Netlify
 
-# 5. What are template literals?
-Instead of using quotes and + signs to join strings and variables, you use backticks (`). This lets you inject variables directly using ${variableName}, which makes building HTML strings much cleaner.
+---
+
+### ✨ Main Features
+* **Add New Issues**: Quickly capture descriptions, severity levels, and assigned personnel.
+* **Status Management**: Toggle issues between **Open** and **Closed** status with visual indicators.
+* **Issue Removal**: Permanently delete resolved or redundant tasks from the tracker.
+* **Filter Logic**: Seamlessly view active vs. completed tasks.
+* **Responsive Layout**: Designed to work perfectly across desktop and mobile browsers.
+
+---
+
+### 📦 Project Structure
+As seen in the repository:
+* `index.html`: The core structural markup.
+* `style.css`: Custom styling and layout logic.
+* `app.js`: Functional logic for DOM manipulation and data persistence.
+* `/assets`: Contains specialized UI icons (Aperture, Status icons, GitHub logo).
+---
+
+### 💻 Local Installation Guide
+
+1.  **Clone the Repository**:
+    ```bash
+    git clone https://github.com/Rusmia-Rahaman-Urfa/Github_Issue_Tracker.git
+    ```
+
+2. **Run the Project**:
+    Simply open the `index.html` file in your preferred web browser, or use the **Live Server** extension in VS Code.
+
+---
+
+### 🔗 Relevant Links
+* **Live Demo**: https://github-issue-tracker-urfa774.netlify.app/
+
+---
+
+**Developed with 💻 by Rusmia Rahaman Urfa**
+
